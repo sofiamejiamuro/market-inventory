@@ -22,6 +22,7 @@ class AddFishForm extends React.Component {
     console.log(e.currentTarget);
     e.currentTarget.reset();
   }
+  
   render() {
     return (
       <form className="fish-edit" onSubmit={this.createFish}>

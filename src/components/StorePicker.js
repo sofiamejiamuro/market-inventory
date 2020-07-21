@@ -14,6 +14,7 @@ class StorePicker extends React.Component {
     this.props.history.push(`/store/${storeName}`);
     // console.log('going to store'); 
   };
+  
   render() {   
     return ( 
       <>

@@ -2,12 +2,15 @@ import React from "react";
 import Header from "./Header.js";
 import Order from "./Order.js";
 import Inventory from "./Inventory.js";
+import sampleFishes from '../sample-fishes';
 
 class App extends React.Component {
+
   state = {
     fishes:{},
     order:{}
   }; 
+
   addFish = fish => {
     console.log('Adding a fish');
     // In react setState API is used
@@ -23,6 +26,14 @@ class App extends React.Component {
       //fishes
     })
   };
+
+  loadSampleFishes = () => {
+    this.setState({
+      fishes:sampleFishes
+    })
+    //console.log('sample fishes');
+  }
+
   render() {
     return ( 
       <div className="catch-of-the-day"> 
@@ -30,7 +41,9 @@ class App extends React.Component {
           <Header tagline="Fresh Seafood Market"/>
         </div>
         <Order/>
-        <Inventory addFish={this.addFish}/>
+        <Inventory 
+          addFish={this.addFish} 
+          loadSampleFishes={this.loadSampleFishes}/>
       </div>
     ) 
   }
